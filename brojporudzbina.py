@@ -1,9 +1,13 @@
-import pandas as pd
+import pandas as p
+Proizvodi = p.read_csv("files/products.csv")
+n = p.read_csv("files/orders.csv")
 
-Porudzbine = pd.read_csv("files/orders.csv")
-Proizvodi = pd.read_csv("files/products.csv")
+m = len(set(n["order_id"]))
+PR = len(set(Proizvodi["product_id"]))
+korisnici = len(set(n["user_id"]))
 
-brojProizvoda = len(set(Proizvodi["product_id"]))
-brojNarudzbina = len(set(Porudzbine["order_id"]))
-brojKorisnika = len(set(Porudzbine["user_id"]))
-print("Broj korisnika: " + str(brojKorisnika) + " broj proizvoda:" + str(brojProizvoda) + " broj narudzbina: " + str(brojNarudzbina))
+
+
+print("Broj korisnika: " + str(korisnici) )
+print(" broj proizvoda:" + str(PR))
+print(" broj narudzbina: " + str(m))
