@@ -1,0 +1,21 @@
+import numpy as np
+import pandas as p
+import matplotlib.pyplot as plt
+
+podacu = p.read_csv("files/orders.csv")
+
+n = len(set(podacu["order_id"]))
+t = len(set(podacu["user_id"]))
+
+print("Prosek: " + str(n/t))
+niz = [0] * 3 * n
+for i in podacu["user_id"]:
+    niz[i] += 1
+b = np.array(range(0, 3*n))
+
+
+a = np.array(niz)
+
+
+plt.plot(b, a)
+plt.show()
